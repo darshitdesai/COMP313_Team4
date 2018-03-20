@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5FD16663-9592-4F57-9452-6908BBF863D8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CabBook.Web</RootNamespace>
+    <AssemblyName>CabBook.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.4.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc5.3.3.3\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.1.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap-datepicker.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\flexslider.css" />
+    <Content Include="css\icomoon.css" />
+    <Content Include="css\magnific-popup.css" />
+    <Content Include="css\owl.carousel.min.css" />
+    <Content Include="css\owl.theme.default.min.css" />
+    <Content Include="css\site.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\themify-icons.css" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\icomoon\icomoon.svg" />
+    <Content Include="fonts\themify-icons\themify.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\1.jpeg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\4.jpeg" />
+    <Content Include="images\Banner.jpg" />
+    <Content Include="images\home.jpg" />
+    <Content Include="images\img_1.jpg" />
+    <Content Include="images\img_2.jpg" />
+    <Content Include="images\img_3.jpg" />
+    <Content Include="images\img_4.jpg" />
+    <Content Include="images\img_5.jpg" />
+    <Content Include="images\img_6.jpg" />
+    <Content Include="images\img_bg_1.jpg" />
+    <Content Include="images\img_bg_2.jpg" />
+    <Content Include="images\img_bg_3.jpg" />
+    <Content Include="images\loader.gif" />
+    <Content Include="images\RidePost.jpg" />
+    <Content Include="js\bootstrap-datepicker.min.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\google_map.js" />
+    <Content Include="js\jquery.countTo.js" />
+    <Content Include="js\jquery.easing.1.3.js" />
+    <Content Include="js\jquery.easypiechart.min.js" />
+    <Content Include="js\jquery.magnific-popup.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.stellar.min.js" />
+    <Content Include="js\jquery.waypoints.min.js" />
+    <Content Include="js\magnific-popup-options.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\modernizr-2.6.2.min.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\respond.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\Bootstrapper.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\CarDetailsController.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
+    <Compile Include="Controllers\DriverController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RiderController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Mappings\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="Mappings\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\GadgetFormViewModel.cs" />
+    <Compile Include="ViewModels\GadgetViewModel.cs" />
+    <Compile Include="WebAPI\DemoController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Gadget.cshtml" />
+    <Content Include="Views\Home\Filter.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\icomoon\icomoon.eot" />
+    <Content Include="fonts\icomoon\icomoon.ttf" />
+    <Content Include="fonts\icomoon\icomoon.woff" />
+    <Content Include="fonts\themify-icons\themify.eot" />
+    <Content Include="fonts\themify-icons\themify.ttf" />
+    <Content Include="fonts\themify-icons\themify.woff" />
+    <Content Include="sass\.DS_Store" />
+    <Content Include="sass\bootstrap.scss" />
+    <Content Include="sass\bootstrap\mixins\_alerts.scss" />
+    <Content Include="sass\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="sass\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="sass\bootstrap\mixins\_buttons.scss" />
+    <Content Include="sass\bootstrap\mixins\_center-block.scss" />
+    <Content Include="sass\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="sass\bootstrap\mixins\_forms.scss" />
+    <Content Include="sass\bootstrap\mixins\_gradients.scss" />
+    <Content Include="sass\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="sass\bootstrap\mixins\_grid.scss" />
+    <Content Include="sass\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="sass\bootstrap\mixins\_image.scss" />
+    <Content Include="sass\bootstrap\mixins\_labels.scss" />
+    <Content Include="sass\bootstrap\mixins\_list-group.scss" />
+    <Content Include="sass\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="sass\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="sass\bootstrap\mixins\_opacity.scss" />
+    <Content Include="sass\bootstrap\mixins\_pagination.scss" />
+    <Content Include="sass\bootstrap\mixins\_panels.scss" />
+    <Content Include="sass\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="sass\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="sass\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="sass\bootstrap\mixins\_resize.scss" />
+    <Content Include="sass\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="sass\bootstrap\mixins\_size.scss" />
+    <Content Include="sass\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="sass\bootstrap\mixins\_table-row.scss" />
+    <Content Include="sass\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="sass\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="sass\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="sass\bootstrap\_alerts.scss" />
+    <Content Include="sass\bootstrap\_badges.scss" />
+    <Content Include="sass\bootstrap\_breadcrumbs.scss" />
+    <Content Include="sass\bootstrap\_button-groups.scss" />
+    <Content Include="sass\bootstrap\_buttons.scss" />
+    <Content Include="sass\bootstrap\_carousel.scss" />
+    <Content Include="sass\bootstrap\_close.scss" />
+    <Content Include="sass\bootstrap\_code.scss" />
+    <Content Include="sass\bootstrap\_component-animations.scss" />
+    <Content Include="sass\bootstrap\_dropdowns.scss" />
+    <Content Include="sass\bootstrap\_forms.scss" />
+    <Content Include="sass\bootstrap\_glyphicons.scss" />
+    <Content Include="sass\bootstrap\_grid.scss" />
+    <Content Include="sass\bootstrap\_input-groups.scss" />
+    <Content Include="sass\bootstrap\_jumbotron.scss" />
+    <Content Include="sass\bootstrap\_labels.scss" />
+    <Content Include="sass\bootstrap\_list-group.scss" />
+    <Content Include="sass\bootstrap\_media.scss" />
+    <Content Include="sass\bootstrap\_mixins.scss" />
+    <Content Include="sass\bootstrap\_modals.scss" />
+    <Content Include="sass\bootstrap\_navbar.scss" />
+    <Content Include="sass\bootstrap\_navs.scss" />
+    <Content Include="sass\bootstrap\_normalize.scss" />
+    <Content Include="sass\bootstrap\_pager.scss" />
+    <Content Include="sass\bootstrap\_pagination.scss" />
+    <Content Include="sass\bootstrap\_panels.scss" />
+    <Content Include="sass\bootstrap\_popovers.scss" />
+    <Content Include="sass\bootstrap\_print.scss" />
+    <Content Include="sass\bootstrap\_progress-bars.scss" />
+    <Content Include="sass\bootstrap\_responsive-embed.scss" />
+    <Content Include="sass\bootstrap\_responsive-utilities.scss" />
+    <Content Include="sass\bootstrap\_scaffolding.scss" />
+    <Content Include="sass\bootstrap\_tables.scss" />
+    <Content Include="sass\bootstrap\_theme.scss" />
+    <Content Include="sass\bootstrap\_thumbnails.scss" />
+    <Content Include="sass\bootstrap\_tooltip.scss" />
+    <Content Include="sass\bootstrap\_type.scss" />
+    <Content Include="sass\bootstrap\_utilities.scss" />
+    <Content Include="sass\bootstrap\_variables.scss" />
+    <Content Include="sass\bootstrap\_wells.scss" />
+    <Content Include="sass\style.scss" />
+    <Content Include="sass\_bootstrap-compass.scss" />
+    <Content Include="sass\_bootstrap-mincer.scss" />
+    <Content Include="sass\_bootstrap-sprockets.scss" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_alerts.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_background-variant.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_border-radius.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_buttons.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_center-block.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_clearfix.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_forms.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_gradients.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_grid-framework.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_grid.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_hide-text.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_image.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_labels.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_list-group.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_nav-divider.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_nav-vertical-align.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_opacity.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_pagination.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_panels.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_progress-bar.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_reset-filter.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_reset-text.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_resize.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_responsive-visibility.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_size.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_tab-focus.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_table-row.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_text-emphasis.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_text-overflow.scssc" />
+    <Content Include=".sass-cache\1312249659bbfaed97ebc9c4fe4615ab409979f2\_vendor-prefixes.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_alerts.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_badges.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_breadcrumbs.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_button-groups.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_buttons.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_carousel.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_close.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_code.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_component-animations.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_dropdowns.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_forms.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_grid.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_input-groups.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_jumbotron.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_labels.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_list-group.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_media.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_mixins.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_modals.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_navbar.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_navs.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_normalize.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_pager.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_pagination.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_panels.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_popovers.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_print.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_progress-bars.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_responsive-embed.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_responsive-utilities.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_scaffolding.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_tables.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_thumbnails.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_tooltip.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_type.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_utilities.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_variables.scssc" />
+    <Content Include=".sass-cache\c131d579e72184e91f426d1f22b65b5f0ae1d20f\_wells.scssc" />
+    <Content Include=".sass-cache\c578ac96aea90b3ef48d5ddbbb0ad284ee4fb7fd\bootstrap.scssc" />
+    <Content Include=".sass-cache\c578ac96aea90b3ef48d5ddbbb0ad284ee4fb7fd\style.scssc" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\style.css.map" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Home\Rider.cshtml" />
+    <Content Include="Views\Driver\Driver.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Views\Driver\CarDetails.cshtml" />
+    <Content Include="Views\Rider\Index.cshtml" />
+    <Content Include="Views\Rider\ViewRides.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\FeedBack.cshtml" />
+    <Content Include="Views\Driver\Index.cshtml" />
+    <Content Include="Views\Driver\ViewRides.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Store.Data\CabBook.Data.csproj">
+      <Project>{8745ed96-7f5a-4cb1-84e3-a2226d9a2c72}</Project>
+      <Name>CabBook.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Store.Model\CabBook.Model.csproj">
+      <Project>{9388dc18-b02e-4ce2-8211-a958b7dd2df2}</Project>
+      <Name>CabBook.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Store.Service\CabBook.Service.csproj">
+      <Project>{bd210642-ac0e-41f8-b954-70d52a27edeb}</Project>
+      <Name>CabBook.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\CarDetails\" />
+    <Folder Include="Views\Demo\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3523</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3523/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

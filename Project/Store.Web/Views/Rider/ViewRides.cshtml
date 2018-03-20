@@ -1,0 +1,274 @@
+﻿@model IEnumerable<CabBook.Model.Models.RideDetails>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Car Details Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="~/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="~/css/icomoon.css">
+    <!-- Themify Icons-->
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="~/css/bootstrap-datepicker.min.css">
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    @* Font awesome *@
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <!-- Modernizr JS -->
+    <script src="~/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+        <script>
+            function SendEnquiry(email, phn)
+            {
+                $("#Driverphn").text(phn);
+                $("#DriverEmail").text(email);
+                $("#EmailAddress").val(email);
+                $("#driverModal").show();
+            }
+        </script>
+</head>
+<body>
+    <div class="gtco-loader"></div>
+    <div id="page">
+        <!-- <div class="page-inner"> -->
+        <nav class="gtco-nav" role="navigation">
+            <div class="gtco-container">
+
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <div id="gtco-logo"><a href="index.html">CabBook<em>.</em></a></div>
+                    </div>
+                    <div class="col-xs-8 text-right menu-1">
+                        <ul>
+                            <li><a href="@Url.Action(" Index","Rider")">Home</a></li>
+                            <li><a href="@Url.Action(" ViewRides","Rider")">View Rides</a></li>
+                            <li>
+                                @if (Request.IsAuthenticated)
+                                {
+                                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <a href="javascript:document.getElementById('logoutForm').submit()">Log out</a>
+                                    }
+                                }
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(../../images/RidePost.jpg); height: 300px;">
+            <div class="overlay"></div>
+            <div class="gtco-container">
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-0 text-left">
+                        <div class="row row-mt-5em">
+                            <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+                                <h1>Enjoy your ride....</h1>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="gtco-section border-bottom">
+            <div class="gtco-container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1" style="border:1px solid silver;border-radius:10px;padding:25px;">
+                        <div class="form-wrap">
+                            <div class="tab-content-inner active" data-content="signup">
+                                <h2 style="text-align:center;font-weight:bold;color:darkblue;">LET's RIDE..</h2>
+                                <hr />
+                                @using (Html.BeginForm("CarDetails", "Driver", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                }
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                        <tr style="background-color: #07a798;color: white;">
+                                            <th scope="col" style="text-align:center;">Driver Name</th>
+                                            <th scope="col" style="text-align:center;">Car Number</th>
+                                            <th scope="col" style="text-align:center;">Baby Seat</th>
+                                            <th scope="col" style="text-align:center;">Major Intersection</th>
+                                            <th scope="col" style="text-align:center;">Start Time</th>
+                                            <th scope="col" style="text-align:center;">Destination</th>
+                                            <th scope="col" style="text-align:center;">Detail</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var md in Model)
+                                        {
+                                            <tr style="text-align:center;">
+                                                <td>
+                                                    @md.UserDetails.FirstName &nbsp; @md.UserDetails.LastName
+                                                </td>
+                                                <td>
+                                                    @md.carDetails.CarNumer
+                                                </td>
+                                                <td>
+                                                    @if (md.carDetails.BabySeat)
+                                                    {<i class="glyphicon glyphicon-ok" style="color:green;"></i>}
+                                                    else
+                                                    { <i class="glyphicon glyphicon-remove" style="color:red;"></i>}
+                                                </td>
+                                                <td>
+                                                    @if (md.rideInfo.FirstStreet != null)
+                                                    { @md.rideInfo.FirstStreet }
+                                                    <font>&nbsp;</font>
+                                                    @if (md.rideInfo.FirstStreet != null)
+                                                    {@md.rideInfo.SecondStret}
+                                                </td>
+                                                <td>
+                                                    @md.rideInfo.StartTime
+                                                </td>
+                                                <td>
+                                                    @md.rideInfo.Destination
+                                                </td>
+                                                <td>
+                                                    <a href="#driverModal" data-toggle="modal" data-target="#driverModal" onclick="SendEnquiry('@md.UserDetails.Email','@md.UserDetails.PhoneNumber')">DETAILS</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @* Detail modal *@
+        <div id="driverModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    @using (Html.BeginForm("SendEnquiry", "Rider", FormMethod.Post))
+                    {
+                        <div class="modal-header" style="background: #09cac9;color:white;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Driver Details</h4>
+                        </div>
+                        <div style="margin-top:20px;">
+                            <div class="col-md-8 col-md-offset-2">
+                                @Html.AntiForgeryToken()
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="fullname">Email :</label>
+                                        <label id="DriverEmail"></label>
+                                        <input type="hidden" id="EmailAddress" name="ToEmail" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="fullname">Phone Number :</label>
+                                        <label id="Driverphn"></label>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="fullname">YOUR CONTACT DETAIL</label>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="fullname">Name</label>
+                                        <input type="text" id="FirstName" name="RiderName" class="form-control" placeholder="Enter Name" required>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="fullname">Email Address</label>
+                                        <input type="email" id="Email" name="RiderEmail" class="form-control" placeholder="Enter Email Address" required>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="fullname">Phone Number</label>
+                                        <input type="text" name="PhoneNumber" id="PhoneNumber" class="form-control" placeholder="Enter Phone Number" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary col-md-2 col-md-offset-5">SEND</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+    <!-- jQuery -->
+    <script src="~/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="~/js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="~/js/owl.carousel.min.js"></script>
+    <!-- countTo -->
+    <script src="~/js/jquery.countTo.js"></script>
+    <!-- Stellar Parallax -->
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/magnific-popup-options.js"></script>
+
+    <!-- Datepicker -->
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Main -->
+    <script src="~/js/main.js"></script>
+</body>
+</html>
