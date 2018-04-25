@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:RiderHomePageBase xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:CabBook;assembly=CabBook" x:Class="CabBook.RiderHomePage" Title="Driver Home" BackgroundColor="#eeeeee">
+  <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="Orange">
+    <local:HeaderView LeftText="Logout" LeftCommand="{Binding LogoutCommand}" HeaderText="Rider Home" RightCommand="{Binding AddCommand}"/>
+
+    <Grid >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <!--<Label BackgroundColor="Lime" TextColor="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Label1" HeightRequest="100"/>-->
+      <!--<Label BackgroundColor="Purple" TextColor="White" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3"  Text="Label2" HeightRequest="100"/>-->
+      <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Source="banner3.png" HeightRequest="400"></Image>
+      <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="6"  Text="Post Your Rides And Make Others Happy" HeightRequest="100"/>
+
+
+      <Label BackgroundColor="Teal" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="View Rides" HeightRequest="100">
+        <Label.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding ViewRideCommand}"/>
+        </Label.GestureRecognizers>
+      </Label>
+      <Label BackgroundColor="Transparent" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3"  Text="" HeightRequest="100">
+      </Label>
+
+      <Label BackgroundColor="Transparent" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Text="" HeightRequest="100">
+      </Label>
+      
+      <!--<Label BackgroundColor="Red" TextColor="White"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Text="Label4" HeightRequest="100"/>
+      <Label BackgroundColor="Blue" TextColor="White" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"  Text="Label5" HeightRequest="100"/>
+      <Label BackgroundColor="Black" TextColor="White" Grid.Row="2"  Grid.Column="2" Grid.ColumnSpan="2"  Text="This is a long description blah blah...." HeightRequest="100"/>
+
+      <Label BackgroundColor="Green" TextColor="White"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  Text="Label7" HeightRequest="100"/>
+      <Label BackgroundColor="Yellow" TextColor="White" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"  Text="Label8" HeightRequest="100"/>
+      <Label BackgroundColor="Gray" TextColor="White" Grid.Row="3"  Grid.Column="4" Grid.ColumnSpan="2"  Text="Label9" HeightRequest="100" />
+
+      <Label BackgroundColor="AntiqueWhite" TextColor="White"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"  Text="Label10" HeightRequest="100"/>
+      <Label BackgroundColor="Coral" TextColor="White" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"  Text="Label11"/>
+      <Label BackgroundColor="BlueViolet" TextColor="White" Grid.Row="4"  Grid.Column="4" Grid.ColumnSpan="2"  Text="Label12" HeightRequest="100"/>
+
+      <Label BackgroundColor="Cornsilk" TextColor="White" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  Text="Label13" HeightRequest="100"/>
+      <Label BackgroundColor="DarkOrange" TextColor="White" Grid.Row="5"  Grid.Column="2" Grid.ColumnSpan="4"  Text="Label14" HeightRequest="100"/>-->
+    </Grid>
+
+  </StackLayout>
+</local:RiderHomePageBase>

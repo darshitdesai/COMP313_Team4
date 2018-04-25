@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{3A63FC68-7579-4D26-9900-1414F67D6EE4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/SplashActivity.cs">
+    <Files>
+      <File FileName="Droid/SplashActivity.cs" Line="33" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="32" Column="4" />
+      <File FileName="Droid/Properties/AndroidManifest.xml" Line="5" Column="12" />
+      <File FileName="iOS/Info.plist" />
+      <File FileName="DifferenzXamarinDemo/Views/MyListPage.xaml.cs" Line="25" Column="61" />
+      <File FileName="DifferenzXamarinDemo/Views/MyListPage.xaml" Line="29" Column="24" />
+      <File FileName="DifferenzXamarinDemo/Helpers/Converters.cs" Line="45" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Views/LoginPage.xaml.cs" Line="22" Column="61" />
+      <File FileName="DifferenzXamarinDemo/Views/MyDetailPage.xaml" Line="47" Column="22" />
+      <File FileName="Droid/Resources/values/Styles.xml" Line="10" Column="30" />
+      <File FileName="Droid/Resources/values/colors.xml" Line="1" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Views/MyDetailPage.xaml.cs" Line="23" Column="59" />
+      <File FileName="DifferenzXamarinDemo/Views/LoginPage.xaml" Line="50" Column="23" />
+      <File FileName="DifferenzXamarinDemo/Views/HeaderView.xaml" Line="36" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Views/HeaderView.xaml.cs" Line="8" Column="73" />
+      <File FileName="DifferenzXamarinDemo/DifferenzXamarinDemo.cs" Line="97" Column="5" />
+      <File FileName="DifferenzXamarinDemo/ViewModels/MyListViewModel.cs" Line="50" Column="29" />
+      <File FileName="DifferenzXamarinDemo/ViewModels/MyDetailViewModel.cs" Line="67" Column="18" />
+      <File FileName="DifferenzXamarinDemo/Helpers/Constants.cs" Line="34" Column="9" />
+      <File FileName="DifferenzXamarinDemo/DifferenzXamarinDemo.csproj" Line="1" Column="1" />
+      <File FileName="DifferenzXamarinDemo/ViewModels/LoginViewModel.cs" Line="55" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Services/LoginService.cs" Line="47" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Helpers/ServiceHelper.cs" Line="10" Column="67" />
+      <File FileName="DifferenzXamarinDemo/Models/LoginModel.cs" Line="26" Column="19" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.Droid PreferredExecutionTarget="Android.AndroidDevice" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.E08B000B-1A6B-4C32-92F0-46FDFD6752A5" automaticSigning="False" />
+  <MultiItemStartupConfigurations />
+</Properties>

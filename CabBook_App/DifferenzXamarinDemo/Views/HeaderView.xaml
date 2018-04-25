@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CabBook.HeaderView" BackgroundColor="Teal">
+	<ContentView.Content>
+        <Grid CompressedLayout.IsHeadless="true" HeightRequest="40" ColumnSpacing="5" RowSpacing="0" Padding="10,0,10,0">
+            <Grid.HeightRequest>
+                <OnPlatform Android="40" WinPhone="40" iOS="60" x:TypeArguments="x:Double" />
+            </Grid.HeightRequest>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100">
+                </ColumnDefinition>
+                <ColumnDefinition Width="*">
+                </ColumnDefinition>
+                <ColumnDefinition Width="100">
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto">
+                </RowDefinition>
+                <RowDefinition Height="40">
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <ContentView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <ContentView.HeightRequest>
+                    <OnPlatform Android="0" WinPhone="0" iOS="20" x:TypeArguments="x:Double" />
+                </ContentView.HeightRequest>
+            </ContentView>
+
+            <Label x:Name="LeftButtontext" LineBreakMode="TailTruncation" FontSize="15" FontFamily="lato-regular" TextColor="White" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0"/>
+            
+            <Label x:Name="headertext" FontAttributes="Bold" LineBreakMode="TailTruncation" FontSize="15" FontFamily="lato-regular" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="1"/>
+            
+            <Label x:Name="RightButtontext" LineBreakMode="TailTruncation" FontSize="15" FontFamily="lato-regular" TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="2"/>
+        </Grid>
+	</ContentView.Content>
+</ContentView>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:RideDetailsPageBase xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:CabBook;assembly=CabBook"
+xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+x:Class="CabBook.RideDetailsPage"
+Title="Car Details"
+BackgroundColor="Orange">
+  <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+    <local:HeaderView HeaderText="Ride Details"/>
+    <ScrollView>
+      <StackLayout x:Name="mainStackView" Scale="0" VerticalOptions="CenterAndExpand" Padding="50" Spacing="10">
+        <Label Text="First Street :" HorizontalOptions="Start" TextColor="White"/>
+        <Label Text="{Binding FirstStreet}" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+        </Label>
+
+        <Label Text="Second Street :" HorizontalOptions="Start" TextColor="White"/>
+        <Label Text="{Binding SecondStreet}" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+        </Label>
+
+        <Label Text="Starting Time : " HorizontalOptions="Start" TextColor="White"/>
+        <Label Text="{Binding StartTime}" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+        </Label>
+
+        <Label Text="Destination : " HorizontalOptions="Start" TextColor="White"/>
+        <Label Text="{Binding Desination}" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+        </Label>
+
+        <Label Text="Landmark : " HorizontalOptions="Start" TextColor="White"/>
+        <Label Text="{Binding Landmark}" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+        </Label>
+
+        <Label Text="Second Street" HorizontalOptions="Start" TextColor="White"/>
+        <Entry Text="{Binding RiderName}" Placeholder="Rider Name" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+          <b:Interaction.Behaviors>
+            <b:BehaviorCollection>
+              <local:AnimateSizeBehavior />
+            </b:BehaviorCollection>
+          </b:Interaction.Behaviors>
+        </Entry>
+
+        <Label Text="Second Street" HorizontalOptions="Start" TextColor="White"/>
+        <Entry Text="{Binding RiderEmail}" Placeholder="Rider Email" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+          <b:Interaction.Behaviors>
+            <b:BehaviorCollection>
+              <local:AnimateSizeBehavior />
+            </b:BehaviorCollection>
+          </b:Interaction.Behaviors>
+        </Entry>
+
+        <Label Text="Second Street" HorizontalOptions="Start" TextColor="White"/>
+        <Entry Text="{Binding PhoneNumber}" Placeholder="Phone Number" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+          <b:Interaction.Behaviors>
+            <b:BehaviorCollection>
+              <local:AnimateSizeBehavior />
+            </b:BehaviorCollection>
+          </b:Interaction.Behaviors>
+        </Entry>
+
+        <BoxView HeightRequest = "30"/>
+        <Button Text="Send" Command="{Binding SendEmailCommand}" HorizontalOptions="FillAndExpand" TextColor="Orange" BorderColor="Teal" BackgroundColor="White" BorderWidth="1" BorderRadius="5" HeightRequest = "40">
+          <b:Interaction.Behaviors>
+            <b:BehaviorCollection>
+              <local:AnimateSizeBehavior/>
+            </b:BehaviorCollection>
+          </b:Interaction.Behaviors>
+        </Button>
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</local:RideDetailsPageBase>

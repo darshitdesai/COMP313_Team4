@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:ViewRidesRiderPageBase xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:CabBook;assembly=CabBook" x:Class="CabBook.ViewRidesRiderPage" Title="Home" BackgroundColor="#eeeeee">
+  <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="Orange">
+    <local:HeaderView LeftText="Logout" LeftCommand="{Binding LogoutCommand}" HeaderText="My Jobs" RightCommand="{Binding AddCommand}"/>
+    <!--<ContentView Padding="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding UserList, Converter={local:NoDataMessageVisibilityConverter}}">
+      <Label Text="No Data" FontSize="12" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    </ContentView>-->
+    <local:ListView BackgroundColor="Transparent" x:Name="MyList" IsVisible="{Binding RideList, Converter={local:ListVisibilityHelper}}" Scale="0" ItemClickCommand="{Binding SelectItem}" ItemsSource="{Binding RideList, Mode=TwoWay}" HasUnevenRows="true" RowHeight="200">
+      <local:ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <ContentView Padding="10">
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+
+                  <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Start" TextColor="Black" Grid.Row="0"  Grid.Column="0"  Text="{Binding UserDetails.FirstName,Mode=TwoWay}" FontSize="18"/>
+                  <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Start" TextColor="Black" Grid.Row="0"  Grid.Column="1"  Text="{Binding rideInfo.StartTime,Mode=TwoWay}" FontSize="18"/>
+
+
+                  <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Start" TextColor="Black" Grid.Row="1"  Grid.Column="0"  Text="{Binding rideInfo.FirstStreet,Mode=TwoWay}" FontSize="18"/>
+                  <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Start" TextColor="Black" Grid.Row="2"  Grid.Column="0"  Text="{Binding rideInfo.SecondStret,Mode=TwoWay}" FontSize="18"/>
+                  <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Start" TextColor="Black" Grid.Row="3"  Grid.Column="0"  Text="{Binding rideInfo.EmailAddress,Mode=TwoWay}" FontSize="18"/>
+                </Grid>
+              </ContentView>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </local:ListView.ItemTemplate>
+    </local:ListView>
+  </StackLayout>
+</local:ViewRidesRiderPageBase>

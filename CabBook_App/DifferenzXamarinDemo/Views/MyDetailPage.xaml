@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:MyDetailBase  
+xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:CabBook;assembly=CabBook"
+xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+x:Class="CabBook.MyDetailPage"
+Title="Detail"
+BackgroundColor="#eeeeee">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0">
+        <local:HeaderView LeftText="Home" LeftCommand="{Binding BackCommand}" HeaderText="Detail" RightText="Logout" RightCommand="{Binding LogoutCommand}"/>
+        <ScrollView>
+            <StackLayout x:Name="MainStackLayout" VerticalOptions="CenterAndExpand" Padding="50" Spacing="10" Scale="0">
+                <Label Text="Name" />
+                <Entry x:Name="nameEntry" Text="{Binding Name}" Placeholder="User name goes here" HeightRequest = "40" BackgroundColor="White" TextColor="Black">
+                    <b:Interaction.Behaviors>
+                        <b:BehaviorCollection>
+                          <local:AnimateSizeBehavior />
+                        </b:BehaviorCollection>
+                     </b:Interaction.Behaviors>
+                </Entry>
+
+                <Label Text="Email" />
+                <Entry x:Name="emailEntry" Text="{Binding EmailAddress}" Keyboard="Email" Placeholder="Email address goes here" HeightRequest = "40" BackgroundColor="White" TextColor="Black">
+                    <b:Interaction.Behaviors>
+                        <b:BehaviorCollection>
+                          <local:AnimateSizeBehavior />
+                        </b:BehaviorCollection>
+                     </b:Interaction.Behaviors>
+                </Entry>
+                <Label Text="Contact Number" />
+                <Entry x:Name="contactEntry" Text="{Binding ContactNumber}" Keyboard="Telephone" Placeholder="Contact number goes here" HeightRequest = "40" BackgroundColor="White" TextColor="Black">
+                    <b:Interaction.Behaviors>
+                        <b:BehaviorCollection>
+                          <local:AnimateSizeBehavior />
+                        </b:BehaviorCollection>
+                     </b:Interaction.Behaviors>
+                </Entry>
+                <Label Text="Active" />
+                <Switch x:Name="doneEntry" IsToggled="{Binding Active}" HorizontalOptions="Start"/>
+                <BoxView HeightRequest = "30"/>
+                <Button Text="{Binding SaveButtonText}" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" TextColor="White" BorderColor="Teal" BackgroundColor="Teal" BorderWidth="1" BorderRadius="5" HeightRequest = "40"/>
+                <Button Text="{Binding DeleteButtonText}" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" TextColor="White" BorderColor="Teal" BackgroundColor="Teal" BorderWidth="1" BorderRadius="5" HeightRequest = "40"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</local:MyDetailBase>

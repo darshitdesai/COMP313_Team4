@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:CarDeatilsPageBase xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:CabBook;assembly=CabBook"
+xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+xmlns:system="clr-namespace:System;assembly=mscorlib"
+x:Class="CabBook.CarDeatilsPage"
+Title="Car Details"
+BackgroundColor="Orange">
+  <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+    <local:HeaderView HeaderText="Car Details"/>
+    <ScrollView>
+      <StackLayout x:Name="mainStackView" Scale="0" VerticalOptions="CenterAndExpand" Padding="50" Spacing="10">
+        <Label Text="Car Name" HorizontalOptions="Start" TextColor="White"/>
+        <Entry Text="{Binding CarName}" Placeholder="Car Name" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+          <b:Interaction.Behaviors>
+            <b:BehaviorCollection>
+              <local:AnimateSizeBehavior />
+            </b:BehaviorCollection>
+          </b:Interaction.Behaviors>
+        </Entry>
+
+        <Label Text="Licence Number" HorizontalOptions="Start" TextColor="White"/>
+        <Entry Text="{Binding LicenseNumber}" Placeholder="Licence Number" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+          <b:Interaction.Behaviors>
+            <b:BehaviorCollection>
+              <local:AnimateSizeBehavior />
+            </b:BehaviorCollection>
+          </b:Interaction.Behaviors>
+        </Entry>
+
+        <Label Text="Licence Type" HorizontalOptions="Start" TextColor="White"/>
+        <!--<Entry Text="{Binding Email}" Placeholder="Licence Type" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="White" TextColor="Black">
+          <b:Interaction.Behaviors>
+            <b:BehaviorCollection>
+              <local:AnimateSizeBehavior />
+            </b:BehaviorCollection>
+          </b:Interaction.Behaviors>
+        </Entry>-->
+
+        <Picker SelectedItem="{Binding LicenseType}" x:Name="LicenseTypePicker" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+          <Picker.Items SelectedIndex="{Binding LicenseType}">
+            <system:String >G</system:String >
+            <system:String >G2</system:String >
+          </Picker.Items>
+        </Picker>
+
+        <Label Text="Car Number" HorizontalOptions="Start" TextColor="White"/>
+        <Entry Text="{Binding CarNumer}" Placeholder="Car Number" HorizontalOptions="FillAndExpand" HeightRequest = "40" BackgroundColor="Transparent" TextColor="White">
+          <b:Interaction.Behaviors>
+            <b:BehaviorCollection>
+              <local:AnimateSizeBehavior />
+            </b:BehaviorCollection>
+          </b:Interaction.Behaviors>
+        </Entry>
+
+        <Label Text="Baby seat" HorizontalOptions="Start" TextColor="White"/>
+        <Switch x:Name="doneEntry" IsToggled="{Binding BabySeat}" HorizontalOptions="Start"/>
+
+        <BoxView HeightRequest = "30"/>
+        <Button Text="Save" IsVisible="{Binding NotCar}" Command="{Binding CarDetailsCommand}" HorizontalOptions="FillAndExpand" TextColor="Orange" BorderColor="Teal" BackgroundColor="White" BorderWidth="1" BorderRadius="5" HeightRequest = "40">
+          <b:Interaction.Behaviors>
+            <b:BehaviorCollection>
+              <local:AnimateSizeBehavior/>
+            </b:BehaviorCollection>
+          </b:Interaction.Behaviors>
+        </Button>
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</local:CarDeatilsPageBase>

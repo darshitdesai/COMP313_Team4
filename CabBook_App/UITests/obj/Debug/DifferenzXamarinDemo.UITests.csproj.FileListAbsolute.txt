@@ -1,0 +1,10 @@
+F:\xamarinProject\Cab\CabBook\UITests\bin\Debug\DifferenzXamarinDemo.UITests.dll
+F:\xamarinProject\Cab\CabBook\UITests\bin\Debug\DifferenzXamarinDemo.UITests.pdb
+F:\xamarinProject\Cab\CabBook\UITests\bin\Debug\nunit.framework.dll
+F:\xamarinProject\Cab\CabBook\UITests\bin\Debug\Xamarin.UITest.dll
+F:\xamarinProject\Cab\CabBook\UITests\bin\Debug\nunit.framework.xml
+F:\xamarinProject\Cab\CabBook\UITests\bin\Debug\Xamarin.UITest.xml
+F:\xamarinProject\Cab\CabBook\UITests\obj\Debug\DifferenzXamarinDemo.UITests.csprojResolveAssemblyReference.cache
+F:\xamarinProject\Cab\CabBook\UITests\obj\Debug\DifferenzXamarinDemo.UITests.csproj.CoreCompileInputs.cache
+F:\xamarinProject\Cab\CabBook\UITests\obj\Debug\DifferenzXamarinDemo.UITests.dll
+F:\xamarinProject\Cab\CabBook\UITests\obj\Debug\DifferenzXamarinDemo.UITests.pdb

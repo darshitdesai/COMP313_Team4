@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.developer.AddressBook">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="15" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application android:label="CabBook" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon" android:debuggable="true">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="Cab Book" android:theme="@style/Theme.AppTheme" android:name="md5e54e3f2cbce7f1fb5448ff22efd26443.MainActivity" />
+    <activity android:configChanges="orientation|screenSize" android:theme="@style/Theme.Splash" android:name="md5e54e3f2cbce7f1fb5448ff22efd26443.SplashActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="Web Authenticator" android:name="md5a104545e4d19c4ffe9ec3d5074a3b979.FormAuthenticatorActivity" />
+    <activity android:label="Web Authenticator" android:name="md5a104545e4d19c4ffe9ec3d5074a3b979.WebAuthenticatorActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.developer.AddressBook.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.com.developer.AddressBook" />
+      </intent-filter>
+    </receiver>
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+  </application>
+</manifest>
