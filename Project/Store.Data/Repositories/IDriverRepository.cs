@@ -13,5 +13,6 @@ namespace CabBook.Data.Repositories
 
         RideInformation GetByDriverId(string driverId);
         IEnumerable<RideInformation> GetAllByDriverId(string driverId);
+        IEnumerable<RideInformation> GetAllByDriverEmail(string email);
     }
 }

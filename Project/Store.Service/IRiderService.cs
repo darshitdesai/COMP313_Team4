@@ -12,6 +12,7 @@ namespace CabBook.Service
         IEnumerable<RideDetails> GetAllData();
         List<RideInformation> GetDatabyDriverId(string id);
         RideDetails GetData(int id);
+        List<RideInformation> GetAllByDriverEmail(string email);
         void SaveData();
     }
 }

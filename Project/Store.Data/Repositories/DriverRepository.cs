@@ -24,5 +24,10 @@ namespace CabBook.Data.Repositories
             return this.GetAll().Where(x=> x.UserId == driverId).ToList();
         }
 
+        public IEnumerable<RideInformation> GetAllByDriverEmail(string email)
+        {
+            return this.GetAll().Where(x => x.User.Email == email).ToList();
+        }
+
     }
 }

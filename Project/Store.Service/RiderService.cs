@@ -51,6 +51,12 @@ namespace CabBook.Service
             return rideDetail;
         }
 
+        public List<RideInformation> GetAllByDriverEmail(string id)
+        {
+            var rideDetail = new List<RideInformation>();
+            rideDetail = driverRepository.GetAllByDriverEmail(id).ToList();
+            return rideDetail;
+        }
 
         public RideDetails GetData(int id)
         {

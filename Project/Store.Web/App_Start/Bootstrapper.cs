@@ -10,6 +10,8 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
+using Autofac.Integration.WebApi;
+using System.Web.Http;
 
 namespace CabBook.Web.App_Start
 {
@@ -25,8 +27,11 @@ namespace CabBook.Web.App_Start
         private static void SetAutofacContainer()
         {
             var builder = new ContainerBuilder();
+
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
-            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
+            builder.RegisterFilterProvider();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
 
             // Repositories
@@ -38,8 +43,11 @@ namespace CabBook.Web.App_Start
                .Where(t => t.Name.EndsWith("Service"))
                .AsImplementedInterfaces().InstancePerRequest();
 
+
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container); // WebApi2
         }
     }
 }

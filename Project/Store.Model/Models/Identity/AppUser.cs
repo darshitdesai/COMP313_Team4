@@ -28,6 +28,15 @@ namespace CabBook.Model.Models.Identity
         //Refrence of RideInformation table
         public ICollection<RideInformation> RideInformation { get; set; }
         public ICollection<CarDetails> CarDetails { get; set; }
+
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager, string authenticationType)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
+            // Add custom user claims here
+            return userIdentity;
+        }
+
     }
 
 

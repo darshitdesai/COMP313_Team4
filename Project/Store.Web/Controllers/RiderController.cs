@@ -86,14 +86,14 @@ namespace CabBook.Web.Controllers
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("savan.apjaks@gmail.com");//("your_email_address@gmail.com");
+                mail.From = new MailAddress("");//("your_email_address@gmail.com");
                 mail.To.Add(model.ToEmail);
                 mail.Subject = "Car Enquiry";
                 mail.Body = "Hello,<br/>" + "Name : " + model.RiderName + ",<br/>" + "Email Address" + model.RiderEmail + ",<br/>" + "Phone Number" + model.PhoneNumber;
                 mail.IsBodyHtml = true;
 
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("savan.apjaks@gmail.com","EmailPassword#@");//"Senderemail@gmail.com", "senderpassword");
+                SmtpServer.Credentials = new System.Net.NetworkCredential();//"Senderemail@gmail.com", "senderpassword");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);

@@ -13,11 +13,19 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.Owin.Security.OAuth;
+using System.Web.Http.Owin;
+using CabBook.Providers;
 
 namespace CabBook.Web.App_Start
 {
     public class IdentityConfig
     {
+
+        public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
+
+        public static string PublicClientId { get; private set; }
+
         public void Configuration(IAppBuilder app)
         {
             app.CreatePerOwinContext(() => new DatabaseEnities());
@@ -26,6 +34,25 @@ namespace CabBook.Web.App_Start
             //app.CreatePerOwinContext<RoleManager<AppRole>>((options, context) =>
             //    new RoleManager<AppRole>(
             //        new RoleStore<AppRole>(context.Get<DatabaseEnities>())));
+
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions());
+            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+
+            // Configure the application for OAuth based flow
+            PublicClientId = "self";
+            OAuthOptions = new OAuthAuthorizationServerOptions
+            {
+                TokenEndpointPath = new PathString("/Token"),
+                Provider = new ApplicationOAuthProvider(PublicClientId),
+                AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+                // In production mode set AllowInsecureHttp = false
+                AllowInsecureHttp = true
+            };
+
+            // Enable the application to use bearer tokens to authenticate users
+            app.UseOAuthBearerTokens(OAuthOptions);
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {

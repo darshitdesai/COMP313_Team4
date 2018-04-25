@@ -79,6 +79,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\DemoConiguration.cs" />
+    <Compile Include="Migrations\201803211837370_initialstate.cs" />
+    <Compile Include="Migrations\201803211837370_initialstate.Designer.cs">
+      <DependentUpon>201803211837370_initialstate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\CarDetailsRepository.cs" />
     <Compile Include="Repositories\DemoRepository.cs" />
@@ -110,6 +114,11 @@
       <Project>{9388dc18-b02e-4ce2-8211-a958b7dd2df2}</Project>
       <Name>CabBook.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803211837370_initialstate.resx">
+      <DependentUpon>201803211837370_initialstate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -128,7 +128,7 @@
                                             }
                                             else
                                             {
-                                                @Html.TextBoxFor(model => model.CarName, new { @class = "form-control", @placeholder = "Enter Car Name", @required= "required" })
+                                                @Html.TextBoxFor(model => model.CarName, new { @class = "form-control", @placeholder = "Enter Car Name", @required = "required" })
                                                 @Html.ValidationMessageFor(m => m.CarName)
                                             }
                                         </div>
@@ -157,10 +157,10 @@
                                             else
                                             {
                                                 @Html.DropDownList("LicenseType", new List<SelectListItem>
-                                                {
-                                                    new SelectListItem{ Text="G2", Value = "G2" },
-                                                    new SelectListItem{ Text="G", Value = "G" },
-                                                }, new { @class = "form-control" })
+                                                                            {
+                                                                                new SelectListItem{ Text="G2", Value = "G2" },
+                                                                                new SelectListItem{ Text="G", Value = "G" },
+                                                                            }, new { @class = "form-control" })
                                             }
                                         </div>
                                     </div>
@@ -185,7 +185,7 @@
                                                 <label for="fullname">Baby Seat</label>
                                                 <label class="form-control"><i class="glyphicon glyphicon-ok" style="color:green"></i></label>
                                             }
-                                            else if (Model != null && Model.CarName != null && Model.BabySeat)
+                                            else if (Model != null && Model.BabySeat)
                                             {
                                                 <label for="fullname">Baby Seat</label>
                                                 <label class="form-control"><i class="glyphicon glyphicon-remove" style="color:red"></i></label>
@@ -198,11 +198,15 @@
                                         </div>
                                     </div>
                                     <div class="row form-group">
-                                        @if (Model == null || Model.CarName == null)
+                                        @if (Model == null)
                                         {
                                             <div class="col-md-12">
                                                 <input type="submit" class="btn btn-primary btn-block" value="SAVE">
                                             </div>
+                                        }
+                                        else
+                                        {
+
                                         }
                                     </div>
                                 }

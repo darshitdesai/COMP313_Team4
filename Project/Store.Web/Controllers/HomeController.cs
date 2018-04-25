@@ -58,6 +58,9 @@ namespace CabBook.Web.Controllers
 
         //[Authorize]
         // GET: Home
+
+        [AllowAnonymous]
+
         public ActionResult Index()
         {
             AppUser user = UserManager.FindByName(User.Identity.Name);
@@ -74,14 +77,14 @@ namespace CabBook.Web.Controllers
             }
             return View();
         }
-
+        [AllowAnonymous]
         public ActionResult Login()
         {
 
             return View();
         }
 
-        [Authorize]
+        [AllowAnonymous]
         public ActionResult Home()
         {
 
@@ -124,14 +127,14 @@ namespace CabBook.Web.Controllers
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("savan.apjaks@gmail.com");//("your_email_address@gmail.com");
+                mail.From = new MailAddress("");//("your_email_address@gmail.com");
                 mail.To.Add(model.EmailAddress);
                 mail.Subject = model.Subject;
-                mail.Body = "Hello,<br/>" + "Name : " + model.Name + ",<br/>" + "Details: " + model.Body;
+                mail.Body = "Hello,<br/>" + "Name : " + model.Name + ",<br/>" + "Details" + model.Body;
                 mail.IsBodyHtml = true;
 
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("savan.apjaks@gmail.com","EmailPassword#@");//"Senderemail@gmail.com", "senderpassword");
+                SmtpServer.Credentials = new System.Net.NetworkCredential();//"Senderemail@gmail.com", "senderpassword");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
@@ -155,14 +158,14 @@ namespace CabBook.Web.Controllers
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("savan.apjaks@gmail.com");//("your_email_address@gmail.com");
+                mail.From = new MailAddress("");//("your_email_address@gmail.com");
                 mail.To.Add(model.EmailAddress);
                 mail.Subject = "User Feedback";
                 mail.Body = "Hello,<br/>" + "Name : " + model.Name + ",<br/>" + "Feedback : " + model.Feedback;
                 mail.IsBodyHtml = true;
 
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("savan.apjaks@gmail.com","EmailPassword#@");// "senderemail@gmail.com", "senderpassword");
+                SmtpServer.Credentials = new System.Net.NetworkCredential();// "senderemail@gmail.com", "senderpassword");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);

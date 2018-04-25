@@ -39,6 +39,7 @@ namespace CabBook.Service
                 rideinfo.Active = false;
                 driverRepository.Update(rideinfo);
             }
+
             return "success";
         }
 

@@ -51,16 +51,15 @@
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    
-        <script>
-            function SendEnquiry(email, phn)
-            {
-                $("#Driverphn").text(phn);
-                $("#DriverEmail").text(email);
-                $("#EmailAddress").val(email);
-                $("#driverModal").show();
-            }
-        </script>
+
+    <script>
+        function SendEnquiry(email, phn) {
+            $("#Driverphn").text(phn);
+            $("#DriverEmail").text(email);
+            $("#EmailAddress").val(email);
+            $("#driverModal").show();
+        }
+    </script>
 </head>
 <body>
     <div class="gtco-loader"></div>
@@ -139,6 +138,8 @@
                                     <tbody>
                                         @foreach (var md in Model)
                                         {
+                                            if (md.rideInfo != null)
+                                            {
                                             <tr style="text-align:center;">
                                                 <td>
                                                     @md.UserDetails.FirstName &nbsp; @md.UserDetails.LastName
@@ -153,122 +154,139 @@
                                                     { <i class="glyphicon glyphicon-remove" style="color:red;"></i>}
                                                 </td>
                                                 <td>
-                                                    @if (md.rideInfo.FirstStreet != null)
-                                                    { @md.rideInfo.FirstStreet }
+
+                                                    @if (md.rideInfo != null && md.rideInfo.FirstStreet != null)
+                                                    {@md.rideInfo.FirstStreet}
                                                     <font>&nbsp;</font>
-                                                    @if (md.rideInfo.FirstStreet != null)
+                                                    @if (md.rideInfo != null && md.rideInfo.FirstStreet != null)
                                                     {@md.rideInfo.SecondStret}
                                                 </td>
                                                 <td>
-                                                    @md.rideInfo.StartTime
+                                                    @if (md.rideInfo != null)
+                                                    {
+                                                        @md.rideInfo.StartTime}
                                                 </td>
+
+
                                                 <td>
-                                                    @md.rideInfo.Destination
+                                                @if (md.rideInfo != null)
+                                                {
+                                                    @md.rideInfo.Destination}
                                                 </td>
+
+
                                                 <td>
-                                                    <a href="#driverModal" data-toggle="modal" data-target="#driverModal" onclick="SendEnquiry('@md.UserDetails.Email','@md.UserDetails.PhoneNumber')">DETAILS</a>
+
+
+                                                <a href = "#driverModal" data - toggle = "modal" data-target = "#driverModal" onclick = "SendEnquiry('@md.UserDetails.Email','@md.UserDetails.PhoneNumber')"> DETAILS </a>
+
+
+
                                                 </td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @* Detail modal *@
-        <div id="driverModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    @using (Html.BeginForm("SendEnquiry", "Rider", FormMethod.Post))
-                    {
-                        <div class="modal-header" style="background: #09cac9;color:white;">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Driver Details</h4>
-                        </div>
-                        <div style="margin-top:20px;">
-                            <div class="col-md-8 col-md-offset-2">
-                                @Html.AntiForgeryToken()
-                                <div class="row form-group">
-                                    <div class="col-md-12">
-                                        <label for="fullname">Email :</label>
-                                        <label id="DriverEmail"></label>
-                                        <input type="hidden" id="EmailAddress" name="ToEmail" />
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col-md-12">
-                                        <label for="fullname">Phone Number :</label>
-                                        <label id="Driverphn"></label>
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col-md-12">
-                                        <label for="fullname">YOUR CONTACT DETAIL</label>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="row form-group">
-                                    <div class="col-md-12">
-                                        <label for="fullname">Name</label>
-                                        <input type="text" id="FirstName" name="RiderName" class="form-control" placeholder="Enter Name" required>
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col-md-12">
-                                        <label for="fullname">Email Address</label>
-                                        <input type="email" id="Email" name="RiderEmail" class="form-control" placeholder="Enter Email Address" required>
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col-md-12">
-                                        <label for="fullname">Phone Number</label>
-                                        <input type="text" name="PhoneNumber" id="PhoneNumber" class="form-control" placeholder="Enter Phone Number" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary col-md-2 col-md-offset-5">SEND</button>
-                            </div>
-                        </div>
-                    }
-                </div>
 
-            </div>
-        </div>
-        <!-- </div> -->
-    </div>
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-    </div>
-    <!-- jQuery -->
-    <script src="~/js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="~/js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="~/js/bootstrap.min.js"></script>
-    <!-- Waypoints -->
-    <script src="~/js/jquery.waypoints.min.js"></script>
-    <!-- Carousel -->
-    <script src="~/js/owl.carousel.min.js"></script>
-    <!-- countTo -->
-    <script src="~/js/jquery.countTo.js"></script>
-    <!-- Stellar Parallax -->
-    <script src="~/js/jquery.stellar.min.js"></script>
-    <!-- Magnific Popup -->
-    <script src="~/js/jquery.magnific-popup.min.js"></script>
-    <script src="~/js/magnific-popup-options.js"></script>
 
-    <!-- Datepicker -->
-    <script src="~/js/bootstrap-datepicker.min.js"></script>
+                                                </tr>}
+                                            }
+                                        </tbody>
+                                        </table>
 
-    <!-- Main -->
-    <script src="~/js/main.js"></script>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        @* Detail modal *@
+                                        <div id="driverModal" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    @using (Html.BeginForm("SendEnquiry", "Rider", FormMethod.Post))
+                                                    {
+                                                        <div class="modal-header" style="background: #09cac9;color:white;">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Driver Details</h4>
+                                                        </div>
+                                                        <div style="margin-top:20px;">
+                                                            <div class="col-md-8 col-md-offset-2">
+                                                                @Html.AntiForgeryToken()
+                                                                <div class="row form-group">
+                                                                    <div class="col-md-12">
+                                                                        <label for="fullname">Email :</label>
+                                                                        <label id="DriverEmail"></label>
+                                                                        <input type="hidden" id="EmailAddress" name="ToEmail" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row form-group">
+                                                                    <div class="col-md-12">
+                                                                        <label for="fullname">Phone Number :</label>
+                                                                        <label id="Driverphn"></label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row form-group">
+                                                                    <div class="col-md-12">
+                                                                        <label for="fullname">YOUR CONTACT DETAIL</label>
+                                                                    </div>
+                                                                </div>
+                                                                <hr />
+                                                                <div class="row form-group">
+                                                                    <div class="col-md-12">
+                                                                        <label for="fullname">Name</label>
+                                                                        <input type="text" id="FirstName" name="RiderName" class="form-control" placeholder="Enter Name" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row form-group">
+                                                                    <div class="col-md-12">
+                                                                        <label for="fullname">Email Address</label>
+                                                                        <input type="email" id="Email" name="RiderEmail" class="form-control" placeholder="Enter Email Address" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row form-group">
+                                                                    <div class="col-md-12">
+                                                                        <label for="fullname">Phone Number</label>
+                                                                        <input type="text" name="PhoneNumber" id="PhoneNumber" class="form-control" placeholder="Enter Phone Number" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <div class="col-md-12">
+                                                                <button type="submit" class="btn btn-primary col-md-2 col-md-offset-5">SEND</button>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- </div> -->
+                        </div>
+                        <div class="gototop js-top">
+                            <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+                        </div>
+                        <!-- jQuery -->
+                        <script src="~/js/jquery.min.js"></script>
+                        <!-- jQuery Easing -->
+                        <script src="~/js/jquery.easing.1.3.js"></script>
+                        <!-- Bootstrap -->
+                        <script src="~/js/bootstrap.min.js"></script>
+                        <!-- Waypoints -->
+                        <script src="~/js/jquery.waypoints.min.js"></script>
+                        <!-- Carousel -->
+                        <script src="~/js/owl.carousel.min.js"></script>
+                        <!-- countTo -->
+                        <script src="~/js/jquery.countTo.js"></script>
+                        <!-- Stellar Parallax -->
+                        <script src="~/js/jquery.stellar.min.js"></script>
+                        <!-- Magnific Popup -->
+                        <script src="~/js/jquery.magnific-popup.min.js"></script>
+                        <script src="~/js/magnific-popup-options.js"></script>
+
+                        <!-- Datepicker -->
+                        <script src="~/js/bootstrap-datepicker.min.js"></script>
+
+                        <!-- Main -->
+                        <script src="~/js/main.js"></script>
 </body>
 </html>
