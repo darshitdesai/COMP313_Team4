@@ -1,4 +1,8 @@
-﻿using Acr.UserDialogs;
+﻿/*Author: Heli Thakkar, Darshit
+Date: March 27, 2018
+*/
+
+using Acr.UserDialogs;
 using CabBook.Helpers;
 using CabBook.Models;
 using PropertyChanged;
@@ -58,7 +62,6 @@ namespace CabBook.ViewModels
 
         async void SendEmail(RideDetails r)
         {
-            //check if car
 
             var riderHompage = new RiderHomePage();
             var riderHomeViewModel = new RiderHomeViewModel();
@@ -69,8 +72,6 @@ namespace CabBook.ViewModels
             riderHompage.BindingContext = riderHomeViewModel;
             await App._NavPage.Navigation.PushAsync(riderHompage);
 
-            //string result = null;
-            //await result = "success";
         }
     }
 }

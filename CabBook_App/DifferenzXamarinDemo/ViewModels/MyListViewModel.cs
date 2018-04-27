@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*Author: Anjali, Mittal
+Date: March 29, 2018
+*/
+
+using System;
 using PropertyChanged;
 using System.Windows.Input;
 using Xamarin.Forms;

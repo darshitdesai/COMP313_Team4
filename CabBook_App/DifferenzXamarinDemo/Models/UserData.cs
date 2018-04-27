@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*Author: Heli Thakkar
+Date: March 17, 2018
+Purpose: User Data Getter Setter*/
+
+
+using System;
 using SQLite;
 
 namespace CabBook

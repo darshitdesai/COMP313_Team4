@@ -10,7 +10,6 @@ namespace CabBook
 	{
 		public FacebookLoginPage ()
 		{
-            //Set page content
 			Content = new StackLayout { 
 				Children = {
 					new Label { Text = Constants.TITLE_PLEASE_WAIT }

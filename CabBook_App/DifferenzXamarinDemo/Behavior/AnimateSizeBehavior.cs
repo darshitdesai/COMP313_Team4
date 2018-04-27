@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*Author: Savan Patel*
+Date March 1, 2018
+Purpose: Screen animation and behaviour*/
+
+
+using System;
 using Xamarin.Forms;
 
 namespace CabBook

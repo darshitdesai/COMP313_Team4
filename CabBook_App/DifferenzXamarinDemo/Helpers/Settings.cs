@@ -1,3 +1,6 @@
+
+/*Author: Anjali Patel
+Date: March 21, 2018 */
 // Helpers/Settings.cs
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;

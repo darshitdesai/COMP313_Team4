@@ -1,6 +1,13 @@
-﻿using System;
+﻿/*Author: Heli Thakkar
+Date: March 16, 2018
+Purpose: Sqlite operations with User Database*/
+
+using System;
 using Xamarin.Forms;
 using SQLite;
+
+
+
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,12 +28,6 @@ namespace CabBook
 			database.CreateTable<RideInformation>();
 		}
 
-        
-
-        /// <summary>
-        /// Gets all user address data.
-        /// </summary>
-        /// <returns>all user address data.</returns>
 		public List<RideInformation> GetAll () 
 		{
 			lock (locker) {
@@ -34,49 +35,6 @@ namespace CabBook
 			}
 		}
 
-        /// <summary>
-        /// Saves the user address data.
-        /// </summary>
-        /// <returns>user address data.</returns>
-        /// <param name="item">Item.</param>
-		//public int SaveItem (RideInformation item) 
-		//{
-		//	//lock (locker) {
-		//	//	if (item.ID != 0) {
-		//	//		database.Update(item);
-		//	//		return item.ID;
-		//	//	} else {
-		//	//		return database.Insert(item);
-		//	//	}
-		//	//}
-		//}
-
-        /// <summary>
-        /// Saves the user address data.
-        /// </summary>
-        /// <returns>user address data.</returns>
-        /// <param name="item">Item.</param>
-		//public int SaveRide(RideInformation item)
-  //      {
-  //          lock (locker)
-  //          {
-  //              if (item.ID != 0)
-  //              {
-  //                  database.Update(item);
-  //                  return item.ID;
-  //              }
-  //              else
-  //              {
-  //                  return database.Insert(item);
-  //              }
-  //          }
-  //      }
-
-        /// <summary>
-        /// Deletes the user address data.
-        /// </summary>
-        /// <returns>user address data.</returns>
-        /// <param name="id">Identifier.</param>
 		public int DeleteItem(int id)
 		{
 			lock (locker) {

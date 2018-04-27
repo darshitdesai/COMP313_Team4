@@ -1,4 +1,8 @@
-﻿using Acr.UserDialogs;
+﻿/*Author: Anjali, Rishit
+Date: March 19, 2018
+*/
+
+using Acr.UserDialogs;
 using CabBook.Helpers;
 using Newtonsoft.Json;
 using PropertyChanged;
@@ -62,7 +66,7 @@ namespace CabBook.ViewModels
 
         async void ViewSaveCarDetails()
         {
-            //check if car
+            
 
             var carDeatilsPage = new CarDeatilsPage();
             var carDeatilsViewModel = new CarDeatilsViewModel();
@@ -70,13 +74,10 @@ namespace CabBook.ViewModels
             carDeatilsPage.BindingContext = carDeatilsViewModel;
             await App._NavPage.Navigation.PushAsync(carDeatilsPage);
 
-            //string result = null;
-            //await result = "success";
         }
 
         async void PostRide()
         {
-            //check if car
 
             var posRidePage = new PostRidePage();
             var postRideViewModel = new PostRideViewModel();
@@ -84,13 +85,10 @@ namespace CabBook.ViewModels
             posRidePage.BindingContext = postRideViewModel;
             await App._NavPage.Navigation.PushAsync(posRidePage);
 
-            //string result = null;
-            //await result = "success";
         }
 
         async void ViewRides()
         {
-            //check if car
 
             var posRidePage = new PostRidePage();
             var postRideViewModel = new PostRideViewModel();
@@ -98,8 +96,6 @@ namespace CabBook.ViewModels
             posRidePage.BindingContext = postRideViewModel;
             await App._NavPage.Navigation.PushAsync(posRidePage);
 
-            //string result = null;
-            //await result = "success";
         }
 
     }

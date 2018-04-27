@@ -1,4 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿/*Author: Savan Patel
+Date: March 26, 2018
+Purpose: Login Data attribute*/
+
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 

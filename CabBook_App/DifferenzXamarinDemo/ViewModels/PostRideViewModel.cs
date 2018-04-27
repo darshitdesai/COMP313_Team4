@@ -1,4 +1,8 @@
-﻿using Acr.UserDialogs;
+﻿/*Author: Heli Thakkar, Darshit
+Date: March 25, 2018
+*/
+
+using Acr.UserDialogs;
 using CabBook.Helpers;
 using PropertyChanged;
 using System;
@@ -47,7 +51,6 @@ namespace CabBook.ViewModels
                 using (UserDialogs.Instance.Loading(Constants.TITLE_SAVING))
                 {
                     var ride = new RideInformation();
-                    //ride.ID = 0;
                     ride.Active = Active;
                     ride.Destination = Desination;
                     ride.FirstStreet = FirstStreet;
@@ -56,7 +59,6 @@ namespace CabBook.ViewModels
                     ride.StartTime = StartTime;
                     ride.UserId = Settings.UserId;
                     var result = DriverService.PostRide(ride);
-                    //App.RideInformationDatabase.SaveRide(ride);
                 };
                 await App.Current.MainPage.DisplayAlert(Constants.TITLE_SUCCESS, Constants.MESSAGE_SUCCESS_DATA_UPDATED, Constants.TEXT_OK);
                 await App.Current.MainPage.Navigation.PopAsync();

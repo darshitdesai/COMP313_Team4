@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*Author: Heli Thakkar*
+Date: March 20, 2018*/
+
+
+using System;
 using Xamarin.Forms;
 using SQLite;
 using System.Collections.Generic;
@@ -60,27 +64,6 @@ namespace CabBook
 				}
 			}
 		}
-
-        /// <summary>
-        /// Saves the user address data.
-        /// </summary>
-        /// <returns>user address data.</returns>
-        /// <param name="item">Item.</param>
-		//public int SaveRide(RideInformation item)
-  //      {
-  //          lock (locker)
-  //          {
-  //              if (item.ID != 0)
-  //              {
-  //                  database.Update(item);
-  //                  return item.ID;
-  //              }
-  //              else
-  //              {
-  //                  return database.Insert(item);
-  //              }
-  //          }
-  //      }
 
         /// <summary>
         /// Deletes the user address data.

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 using Acr.UserDialogs;
 using System.Linq;
@@ -37,8 +36,6 @@ namespace CabBook
 		protected async override void OnLoaded()
 		{
 			base.OnLoaded();
-
-            //Animates the layout in screen
 			await Task.Delay(300);
 			
 		}

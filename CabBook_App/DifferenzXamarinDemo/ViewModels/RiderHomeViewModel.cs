@@ -1,4 +1,8 @@
-﻿using Acr.UserDialogs;
+﻿/*Author: Dhwanil, Rishit
+Date: March 25, 2018
+*/
+
+using Acr.UserDialogs;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;

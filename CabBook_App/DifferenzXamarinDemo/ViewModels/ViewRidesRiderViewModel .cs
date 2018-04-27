@@ -1,4 +1,8 @@
-﻿using CabBook.Helpers;
+﻿/*Author: Heli Thakkar, Mittal
+Date: March 17, 2018
+*/
+
+using CabBook.Helpers;
 using CabBook.Models;
 using PropertyChanged;
 using System;
@@ -31,7 +35,6 @@ namespace CabBook.ViewModels
 
         async void ViewRideDetais(RideDetails r)
         {
-            //check if car
 
             var rideDetailsPage = new RideDetailsPage();
             var rideDetailsViewModel = new RideDetailsViewModel();
@@ -48,8 +51,7 @@ namespace CabBook.ViewModels
             rideDetailsPage.BindingContext = rideDetailsViewModel;
             await App._NavPage.Navigation.PushAsync(rideDetailsPage);
 
-            //string result = null;
-            //await result = "success";
+            
         }
     }
 }

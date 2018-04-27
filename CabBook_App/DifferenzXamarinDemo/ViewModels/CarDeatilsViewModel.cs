@@ -1,4 +1,8 @@
-﻿using Acr.UserDialogs;
+﻿/*Author: Heli Thakkar
+Date: March 17, 2018
+*/
+
+using Acr.UserDialogs;
 using CabBook.Helpers;
 using CabBook.Models;
 using PropertyChanged;
@@ -47,7 +51,6 @@ namespace CabBook.ViewModels
 
         async void ViewSaveCarDetails()
         {
-            //check if car
 
 
             using (UserDialogs.Instance.Loading(Constants.TITLE_AUTHENTICATING))

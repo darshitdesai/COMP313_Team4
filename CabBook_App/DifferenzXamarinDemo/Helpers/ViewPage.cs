@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*Author: Dhwanil Shah
+Date: March 15, 2018
+Purpose: Content wrapper class and viewmodel binder*/
+
+using System;
 using Xamarin.Forms;
 using System.Collections.Generic;
 using System.Windows.Input;

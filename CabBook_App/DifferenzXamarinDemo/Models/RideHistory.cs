@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*Author: Mittal Patel
+Date: March 16, 2018
+Purpose: Ride Information Getter Setter*/
+
+using System;
 using SQLite;
 
 namespace CabBook

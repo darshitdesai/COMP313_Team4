@@ -32,8 +32,6 @@ namespace CabBook
 		protected async override void OnLoaded()
 		{
 			base.OnLoaded();
-
-            //Animates the layout in screen
 			await Task.Delay(300);
 			await mainStackView.ScaleTo(1, 250, Easing.SinIn);
 		}

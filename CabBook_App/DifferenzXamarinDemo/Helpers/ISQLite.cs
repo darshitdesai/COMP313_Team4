@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*Author: Heli Thakkar
+Date: March 16, 2018
+Purpose: SQlite Operations Declaration*/
+
+using System;
 using SQLite;
 
 namespace CabBook
